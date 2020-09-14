@@ -1,6 +1,6 @@
 # dir
-tendorboard/**
 !tendorboard/README.md
+tendorboard/**
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
