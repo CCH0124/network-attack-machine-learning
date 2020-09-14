@@ -10,7 +10,7 @@ def loss_graph(model_):
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left') 
     plt.show()
-
+    # plt.savefig("figure/loss.png")
 def recall_graph(model_):
     plt.plot(model_.history['recall']) 
     plt.plot(model_.history['val_recall']) 
@@ -19,7 +19,7 @@ def recall_graph(model_):
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left') 
     plt.show()
-
+    # plt.savefig("figure/recall.png")
 def precision_graph(model_):
     plt.plot(model_.history['precision']) 
     plt.plot(model_.history['val_precision']) 
@@ -28,7 +28,7 @@ def precision_graph(model_):
     plt.xlabel('epoch')
     plt.legend(['train', 'test'], loc='upper left') 
     plt.show()
-
+    # plt.savefig("figure/precision.png")
 def lr_graph(model_):
     plt.plot(model_.history['lr']) 
     plt.title('model Learning Rate')
@@ -36,3 +36,4 @@ def lr_graph(model_):
     plt.xlabel('epoch')
     plt.legend(['lr'], loc='upper left') 
     plt.show()
+    # plt.savefig("figure/lr_decay.png")

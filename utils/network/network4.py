@@ -4,19 +4,21 @@ from tensorflow.keras import layers
 class MyLstmModel(tf.keras.Model):
     def __init__(self):
         super(MyLstmModel, self).__init__()
-        self.forward_layer_one = layers.LSTM(64, dropout=0.3, recurrent_dropout=0.3, return_sequences=True) # bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10),activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-08)
-        self.backward_layer_one = layers.LSTM(64, dropout=0.3, recurrent_dropout=0.3, return_sequences=True , go_backwards=True)
+        # recurrent_dropout=0.3 
+        # https://www.tensorflow.org/api_docs/python/tf/keras/layers/GRU#used-in-the-notebooks_1
+        self.forward_layer_one = layers.LSTM(64, dropout=0.3, return_sequences=True) # bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10),activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-08)
+        self.backward_layer_one = layers.LSTM(64, dropout=0.3, return_sequences=True , go_backwards=True)
         self.bi_one = layers.Bidirectional(self.forward_layer_one, backward_layer=self.backward_layer_one, name='bi_one')
 
-        self.forward_layer_two = layers.LSTM(32, dropout=0.3, recurrent_dropout=0.3, return_sequences=True)
-        self.backward_layer_two = layers.LSTM(32, dropout=0.3, recurrent_dropout=0.3, return_sequences=True , go_backwards=True)
+        self.forward_layer_two = layers.LSTM(32, dropout=0.3, return_sequences=True)
+        self.backward_layer_two = layers.LSTM(32, dropout=0.3, return_sequences=True , go_backwards=True)
         self.bi_two = layers.Bidirectional(self.forward_layer_two, backward_layer=self.backward_layer_two, name='bi_two')
 
-        self.forward_layer_one = layers.LSTM(16, dropout=0.3, recurrent_dropout=0.3) 
-        self.backward_layer_one = layers.LSTM(16, dropout=0.3, recurrent_dropout=0.3, go_backwards=True)
+        self.forward_layer_one = layers.LSTM(16, dropout=0.3) 
+        self.backward_layer_one = layers.LSTM(16, dropout=0.3, go_backwards=True)
         self.bi_three = layers.Bidirectional(self.forward_layer_one, backward_layer=self.backward_layer_one, name='bi_three')
 
-        self.dense_three = layers.Dense(8,name='dense_three') # bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06, l2=1e-10), activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08, l2=1e-10)
+        self.dense_three = layers.Dense(8, name='dense_three') # bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06, l2=1e-10), activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08, l2=1e-10)
         self.avtivation = layers.Activation(tf.nn.relu, name='dense_three_activation')
         self.drop = layers.Dropout(0.5)
 
