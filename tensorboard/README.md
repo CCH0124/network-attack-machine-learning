@@ -139,3 +139,23 @@ Precision result:  0.9530964
 ```
 - fig
     - figure\20200915-192326-network3-RMSprop
+
+##### 20200915-202658-network3-RMSprop
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=20
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  128801.0
+TruePositives result:  71983.0
+FalseNegatives result:  3326.0
+FalsePositives result:  3312.0
+Recall result:  0.9558353
+Precision result:  0.956013
+```
+- fig
+    - figure\20200915-202658-network3-RMSprop
