@@ -1,3 +1,47 @@
+##### 20200915-111015-network-RMSprop
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=10
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  128082.0
+TruePositives result:  72690.0
+FalseNegatives result:  3072.0
+FalsePositives result:  3578.0
+Recall result:  0.959452
+Precision result:  0.9530865
+```
+- fig
+    - figure\20200915-111015-network-RMSprop
+
+##### 20200915-113013-network-RMSprop
+
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=20
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  128204.0
+TruePositives result:  72579.0
+FalseNegatives result:  3183.0
+FalsePositives result:  3456.0
+Recall result:  0.95798683
+Precision result:  0.9545472
+```
+- fig
+    - figure\20200915-113013-network-RMSprop
+
+
+
+
 ##### 20200914-104913-network3-RMSprop
 - optimizer
     - learning_rate=0.001
@@ -143,3 +187,22 @@ Precision result:  0.9537981
 - fig
     - figure\20200914-232911-network2-RMSprop
 
+##### 20200915-093012-network2-RMSprop
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=40
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  128337.0
+TruePositives result:  72480.0
+FalseNegatives result:  3092.0
+FalsePositives result:  3513.0
+Recall result:  0.9590854
+Precision result:  0.95377207
+```
+- fig
+    - figure\20200915-093012-network2-RMSprop
