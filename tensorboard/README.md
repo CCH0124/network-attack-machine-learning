@@ -166,7 +166,7 @@ Precision result:  0.956013
     - momentum=0.89
 - train
     - epochs=10
-     - batch_size=512
+    - batch_size=512
         
 - predict
 ```
@@ -179,6 +179,26 @@ Precision result:  0.9529488
 ```
 - fig
     - figure\20200915-211922-network3-RMSprop
+
+##### 20200915-233149-network3-RMSprop
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - epochs=10
+    - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  127085.0
+TruePositives result:  75189.0
+FalseNegatives result:  391.0
+FalsePositives result:  4757.0
+Recall result:  0.9948267
+Precision result:  0.94049734
+```
+- fig
+    - figure\20200915-233149-network3-RMSprop
 
 ##### 20200915-213526-network4-RMSprop
 - optimizer
@@ -217,6 +237,27 @@ FalseNegatives result:  3145.0
 FalsePositives result:  3336.0
 Recall result:  0.95838845
 Precision result:  0.9559726
+```
+- fig
+    - figure\20200915-214749-network4-RMSprop
+
+
+##### 20200915-224224-network4-RMSprop
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=20
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  128419.0
+TruePositives result:  72509.0
+FalseNegatives result:  3071.0
+FalsePositives result:  3423.0
+Recall result:  0.9593676
+Precision result:  0.9549202
 ```
 - fig
     - figure\20200915-214749-network4-RMSprop
