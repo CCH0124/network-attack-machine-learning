@@ -8,7 +8,7 @@ class MyLstmModel(tf.keras.Model):
         self.bi_one = layers.Bidirectional(self.forward_layer_one, backward_layer=self.backward_layer_one, name='bi_one')
 
         self.forward_layer_two = layers.LSTM(16, kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10), bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06,l2=1e-08), activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06,l2=1e-08), recurrent_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10), dropout=0.3)
-        self.backward_layer_two = layers.LSTM(15, kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10), bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06,l2=1e-08), activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06,l2=1e-08), recurrent_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10) , dropout=0.3 , go_backwards=True)
+        self.backward_layer_two = layers.LSTM(16, kernel_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10), bias_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06,l2=1e-08), activity_regularizer=tf.keras.regularizers.l1_l2(l1=1e-06,l2=1e-08), recurrent_regularizer=tf.keras.regularizers.l1_l2(l1=1e-08,l2=1e-10) , dropout=0.3 , go_backwards=True)
         self.bi_two = layers.Bidirectional(self.forward_layer_two, backward_layer=self.backward_layer_two, name='bi_two')
 
         self.dense_three = layers.Dense(8, kernel_regularizer=tf.keras.regularizers.l2(1e-05), bias_regularizer=tf.keras.regularizers.l2(1e-05), activity_regularizer=tf.keras.regularizers.l2(1e-05), name='dense_three')
