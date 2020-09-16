@@ -321,3 +321,25 @@ Precision result:  0.98288393
 ```
 - fig
     - figure\20200916-115552-network5-RMSprop
+
+
+##### 20200916-125544-network5-RMSprop
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=60
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  128341.0
+TruePositives result:  72542.0
+FalseNegatives result:  3239.0
+FalsePositives result:  3300.0
+Recall result:  0.9572584
+Precision result:  0.9564885
+```
+- fig
+    - figure\20200916-125544-network5-RMSprop
+
