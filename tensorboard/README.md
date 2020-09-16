@@ -219,7 +219,7 @@ Precision result:  0.9495809
 ```
 - fig
     - figure\20200915-234414-network3-RMSprop
-    
+
 ##### 20200915-213526-network4-RMSprop
 - optimizer
     - learning_rate=0.001
@@ -281,3 +281,23 @@ Precision result:  0.9549202
 ```
 - fig
     - figure\20200915-214749-network4-RMSprop
+
+##### 20200916-114347-network5-RMSprop
+- optimizer
+    - learning_rate=0.001
+    - momentum=0.89
+- train
+    - epochs=20
+     - batch_size=512
+        
+- predict
+```
+TrueNegatives result:  130440.0
+TruePositives result:  66807.0
+FalseNegatives result:  8974.0
+FalsePositives result:  1201.0
+Recall result:  0.8815798
+Precision result:  0.98234034
+```
+- fig
+    - figure\20200916-114347-network5-RMSprop
