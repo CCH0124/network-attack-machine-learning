@@ -330,3 +330,31 @@ Precision result:  0.9565475
 - fig
     - figure/20200916-145155-network5-RMSprop
 
+##### 20200916-163718-network6-RMSprop
+
+- epochs=40
+- predict
+```
+TrueNegatives result:  128001.0
+TruePositives result:  73529.0
+FalseNegatives result:  2047.0
+FalsePositives result:  3845.0
+Recall result:  0.9729147
+Precision result:  0.9503063
+```
+- fig
+    - figure/20200916-163718-network6-RMSprop
+
+##### 20200916-213613-network6-RMSprop
+- epochs=60
+- predict
+```
+TrueNegatives result:  127518.0
+TruePositives result:  74774.0
+FalseNegatives result:  802.0
+FalsePositives result:  4328.0
+Recall result:  0.98938817
+Precision result:  0.94528586
+```
+- fig
+    - figure/20200916-213613-network6-RMSprop
