@@ -329,6 +329,20 @@ Precision result:  0.9565475
 ```
 - fig
     - figure/20200916-145155-network5-RMSprop
+## Network6
+在 `Network6` 中設定為三層 `BI-LSTM` 其神經元分別是 32、16 和 8 和一層神經網路神經元為 3。因為原本神經元為 8 的神經網路，相較於 `BI-LSTM` 計算較沒複雜，因此這邊嘗試替換。
+
+從以下訓練結果來看，`optimizer` 和 `batch_size` 沒有變化，設定如下
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - batch_size=512
+
+`epoch` 則是使用 `40` 和 `60` 進行觀察，結果和前面的架構是大同小異。接著觀察 `loss`，在 `epoch` 為 40 下，明顯的有越來越穩定也就是有擬合的味道。
+
+![](../figure/20200916-163718-network6-RMSprop/loss.png)
+![](../figure/20200916-213613-network6-RMSprop/loss.png)
 
 ##### 20200916-163718-network6-RMSprop
 
@@ -358,3 +372,33 @@ Precision result:  0.94528586
 ```
 - fig
     - figure/20200916-213613-network6-RMSprop
+
+
+
+##### 20200917-095738-network7-RMSprop
+- epochs=20
+- predict
+```
+TrueNegatives result:  128248.0
+TruePositives result:  73293.0
+FalseNegatives result:  2155.0
+FalsePositives result:  3726.0
+Recall result:  0.9714373
+Precision result:  0.9516223
+```
+- fig
+    - figure/20200917-095738-network7-RMSprop
+
+##### 20200917-101054-network7-RMSprop
+- epochs=40
+- predict
+```
+TrueNegatives result:  128460.0
+TruePositives result:  73360.0
+FalseNegatives result:  2088.0
+FalsePositives result:  3514.0
+Recall result:  0.9723253
+Precision result:  0.95428884
+```
+- fig
+    - figure/20200917-101054-network7-RMSprop
