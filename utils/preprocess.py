@@ -64,7 +64,9 @@ class preprocess():
         
     def preprocessing(self):
         self.get_dataFrame()
-        self.__dataFrame = ndp.inf_and_na_drop(self.__dataFrame)
+        # self.__dataFrame = ndp.inf_and_na_drop(self.__dataFrame)
+        # self.__dataFrame = ndp.inf_drop_insert_nan(self.__dataFrame)
+        self.__dataFrame = ndp.inf_replace_value_ffill_nan(self.__dataFrame)
         self.one_hot_encode()
         self.normalization()     
         X_train, X_test, y_train, y_test = self.splite_train_test()

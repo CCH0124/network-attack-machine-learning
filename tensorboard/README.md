@@ -500,3 +500,31 @@ Precision result:  0.9363363
 ![](../figure/20200917-144439-network8-RMSprop/precision.png)
 
 ![](../figure/20200917-144439-network8-RMSprop/loss.png)
+
+
+##### 20200917-150400-network8-RMSprop
+
+- 使用 `inf_replace_value_ffill_nan` 資料前處理
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - epoch=20
+    - batch_size=512
+    - cla
+- predict
+```
+TrueNegatives result:  127506.0
+TruePositives result:  74451.0
+FalseNegatives result:  1188.0
+FalsePositives result:  4666.0
+Recall result:  0.9842938
+Precision result:  0.94102407
+```
+- fig
+    - figure/20200917-150400-network8-RMSprop
+
+![](../figure/20200917-150400-network8-RMSprop/recall.png)
+![](../figure/20200917-150400-network8-RMSprop/precision.png)
+
+![](../figure/20200917-150400-network8-RMSprop/loss.png)
