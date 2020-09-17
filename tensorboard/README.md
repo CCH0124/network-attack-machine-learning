@@ -418,3 +418,29 @@ Precision result:  0.95428884
 ```
 - fig
     - figure/20200917-101054-network7-RMSprop
+
+## Network8
+
+##### 20200917-124949-network8-RMSprop
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - epoch=20
+    - batch_size=512
+- predict
+```
+TrueNegatives result:  127399.0
+TruePositives result:  74608.0
+FalseNegatives result:  1043.0
+FalsePositives result:  4761.0
+Recall result:  0.986213
+Precision result:  0.94001436
+```
+- fig
+    - figure/20200917-124949-network8-RMSprop
+從下面訓練時的 `Recall` 和 `precision` 來看是有問題的，在看 `loss` 是完全未擬合。
+![](../figure/20200917-124949-network8-RMSprop/recall.png)
+![](../figure/20200917-124949-network8-RMSprop/precision.png)
+
+![](../figure/20200917-124949-network8-RMSprop/loss.png)
