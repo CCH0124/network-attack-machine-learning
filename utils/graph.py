@@ -44,3 +44,13 @@ def lr_graph(model_, name):
     plt.savefig("../figure/"+name+"/lr_decay.png")
     plt.show()
     
+def cross_entropy_graph(model_, name):
+    # plot learning curves
+    plt.title('Learning Curves')
+    plt.xlabel('Epoch')
+    plt.ylabel('Cross Entropy')
+    plt.plot(model_.history['loss'], label='train')
+    plt.plot(model_.history['val_loss'], label='val')
+    plt.legend()
+    plt.savefig("../figure/"+name+"/cross_entropy_graph_decay.png")
+    plt.show()
