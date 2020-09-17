@@ -428,6 +428,7 @@ Precision result:  0.95428884
 - train
     - epoch=20
     - batch_size=512
+    - cla
 - predict
 ```
 TrueNegatives result:  127399.0
@@ -439,8 +440,36 @@ Precision result:  0.94001436
 ```
 - fig
     - figure/20200917-124949-network8-RMSprop
-從下面訓練時的 `Recall` 和 `precision` 來看是有問題的，在看 `loss` 是完全未擬合。
+從下面訓練時的 `Recall` 和 `precision` 來看是有問題的，在看 `loss` 是完全未擬合，後來發現是因為我們將分類數量從 3 變 2，也就是最後一層神經網路將其調整成分類成 2 類，但未調整到 `loss function` 的方法，導致出現以下原因
+
 ![](../figure/20200917-124949-network8-RMSprop/recall.png)
 ![](../figure/20200917-124949-network8-RMSprop/precision.png)
 
 ![](../figure/20200917-124949-network8-RMSprop/loss.png)
+
+##### 20200917-140400-network8-RMSprop
+這是修正 `20200917-124949-network8-RMSprop` 後的結果，將 `loss function` 變成 `binary_crossentropy` 就解決了問題。但是結果也不是很理想
+
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - epoch=20
+    - batch_size=512
+    - cla
+- predict
+```
+TrueNegatives result:  127505.0
+TruePositives result:  74490.0
+FalseNegatives result:  1262.0
+FalsePositives result:  4554.0
+Recall result:  0.9833404
+Precision result:  0.9423865
+```
+- fig
+    - figure/20200917-140400-network8-RMSprop
+
+![](../figure/20200917-140400-network8-RMSprop/recall.png)
+![](../figure/20200917-140400-network8-RMSprop/precision.png)
+
+![](../figure/20200917-140400-network8-RMSprop/loss.png)
