@@ -1,10 +1,14 @@
-import numpy as np
-import pandas as pd
+import tensorflow as tf
 
-def miss_values_rate(dataframe):
-    missing_values_count = dataframe.isnull().sum()
-    total_miss_values = missing_values_count.sum()
-    total_cells = np.product(dataframe.shape)
-    print(total_miss_values)
-    print(total_cells)
-    print((total_miss_values/total_cells) * 100) 
+def splite_train_test_val(self, train_size=0.7, val_size=0.15, test_size=0.15, reshuffle_each_iteration=False):
+        dataset = tf.data.Dataset.from_tensor_slices((self.__dataFrame, self.__LabelDataFrame))
+        train_size_ = int(train_size * self.__dataFrame.shape[0])
+        val_size_ = int(val_size * self.__dataFrame.shape[0])
+        test_size_ = int(test_size * self.__dataFrame.shape[0])
+
+        full_dataset = dataset.shuffle(buffer_size=self.__dataFrame.shape[0], reshuffle_each_iteration = reshuffle_each_iteration )
+        train_dataset = full_dataset.take(train_size_)
+        test_dataset = full_dataset.skip(train_size_)
+        val_dataset = test_dataset.skip(val_size_)
+        test_dataset = test_dataset.take(test_size_)
+        return train_dataset, test_dataset, val_dataset

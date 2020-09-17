@@ -449,7 +449,7 @@ Precision result:  0.94001436
 
 ##### 20200917-140400-network8-RMSprop
 這是修正 `20200917-124949-network8-RMSprop` 後的結果，將 `loss function` 變成 `binary_crossentropy` 就解決了問題。但是結果也不是很理想
-
+- 使用 `inf_and_na_drop` 資料前處理
 - optimizer
     - learning_rate=0.01
     - momentum=0.89
@@ -473,3 +473,30 @@ Precision result:  0.9423865
 ![](../figure/20200917-140400-network8-RMSprop/precision.png)
 
 ![](../figure/20200917-140400-network8-RMSprop/loss.png)
+
+##### 20200917-144439-network8-RMSprop
+
+- 使用 `inf_drop_insert_nan` 資料前處理
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - epoch=20
+    - batch_size=512
+    - cla
+- predict
+```
+TrueNegatives result:  127110.0
+TruePositives result:  74376.0
+FalseNegatives result:  1268.0
+FalsePositives result:  5057.0
+Recall result:  0.98323727
+Precision result:  0.9363363
+```
+- fig
+    - figure/20200917-144439-network8-RMSprop
+
+![](../figure/20200917-144439-network8-RMSprop/recall.png)
+![](../figure/20200917-144439-network8-RMSprop/precision.png)
+
+![](../figure/20200917-144439-network8-RMSprop/loss.png)
