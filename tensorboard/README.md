@@ -447,16 +447,40 @@ Precision result:  0.94001436
 
 ![](../figure/20200917-124949-network8-RMSprop/loss.png)
 
-##### 20200917-140400-network8-RMSprop
-這是修正 `20200917-124949-network8-RMSprop` 後的結果，將 `loss function` 變成 `binary_crossentropy` 就解決了問題。但是結果也不是很理想
-- 使用 `inf_and_na_drop` 資料前處理
+
+### 不同資料前處理效果
+
+優化器參數和訓練參數的值
+
 - optimizer
     - learning_rate=0.01
     - momentum=0.89
 - train
     - epoch=20
     - batch_size=512
-    - cla
+
+![](../figure/20200917-140400-network8-RMSprop/loss.png) 
+
+將 infinity 和 nan 的欄位刪除
+
+![](../figure/20200917-144439-network8-RMSprop/loss.png) 
+
+使用將 infinity 刪除，nan 用 ffill 方式補值
+
+![](../figure/20200917-150400-network8-RMSprop/loss.png) 
+
+使用將 infinity 用一個數值做取代，nan 用 ffill 方式補值
+
+![](../figure/20200917-161711-network8-RMSprop/loss.png) 
+
+使用將 infinity 刪除，nan 用 quadratic 方式補值
+
+
+最後訓練的 `loss` 都大致在 0.34 左右，然後預測的 `recall` 大約在 0.98 左右，`precision` 在 0.94 左右，這些資訊來看相較於前面，有些許的差。但這邊主要是測試針對不同的資料處裡方式對訓練有何影響，目前看來影響很小。
+
+##### 20200917-140400-network8-RMSprop
+這是修正 `20200917-124949-network8-RMSprop` 後的結果，將 `loss function` 變成 `binary_crossentropy` 就解決了問題。但是結果也不是很理想
+- 使用 `inf_and_na_drop` 資料前處理
 - predict
 ```
 TrueNegatives result:  127505.0
@@ -474,16 +498,10 @@ Precision result:  0.9423865
 
 ![](../figure/20200917-140400-network8-RMSprop/loss.png)
 
+
 ##### 20200917-144439-network8-RMSprop
 
 - 使用 `inf_drop_insert_nan` 資料前處理
-- optimizer
-    - learning_rate=0.01
-    - momentum=0.89
-- train
-    - epoch=20
-    - batch_size=512
-    - cla
 - predict
 ```
 TrueNegatives result:  127110.0
@@ -505,13 +523,6 @@ Precision result:  0.9363363
 ##### 20200917-150400-network8-RMSprop
 
 - 使用 `inf_replace_value_ffill_nan` 資料前處理
-- optimizer
-    - learning_rate=0.01
-    - momentum=0.89
-- train
-    - epoch=20
-    - batch_size=512
-    - cla
 - predict
 ```
 TrueNegatives result:  127506.0
@@ -532,13 +543,7 @@ Precision result:  0.94102407
 
 ##### 20200917-161711-network8-RMSprop
 - 使用 `inf_drop_insert_nan(method='quadratic')` 資料前處理
-- optimizer
-    - learning_rate=0.01
-    - momentum=0.89
-- train
-    - epoch=20
-    - batch_size=512
-    - cla
+
 - predict
 ```
 TrueNegatives result:  127395.0
