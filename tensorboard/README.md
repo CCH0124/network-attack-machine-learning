@@ -402,3 +402,17 @@ Precision result:  0.95428884
 ```
 - fig
     - figure/20200917-101054-network7-RMSprop
+
+##### 20200917-104443-network8-RMSprop
+- epochs=20
+- predict
+```
+TrueNegatives result:  127494.0
+TruePositives result:  74320.0
+FalseNegatives result:  1391.0
+FalsePositives result:  4217.0
+Recall result:  0.9816275
+Precision result:  0.9463056
+```
+- fig
+    - figure/20200917-104443-network8-RMSprop
