@@ -528,3 +528,30 @@ Precision result:  0.94102407
 ![](../figure/20200917-150400-network8-RMSprop/precision.png)
 
 ![](../figure/20200917-150400-network8-RMSprop/loss.png)
+
+
+##### 20200917-161711-network8-RMSprop
+- 使用 `inf_drop_insert_nan(method='quadratic')` 資料前處理
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - epoch=20
+    - batch_size=512
+    - cla
+- predict
+```
+TrueNegatives result:  127395.0
+TruePositives result:  74346.0
+FalseNegatives result:  1367.0
+FalsePositives result:  4703.0
+Recall result:  0.981945
+Precision result:  0.94050527
+```
+- fig
+    - figure/20200917-161711-network8-RMSprop
+
+![](../figure/20200917-161711-network8-RMSprop/recall.png)
+![](../figure/20200917-161711-network8-RMSprop/precision.png)
+
+![](../figure/20200917-161711-network8-RMSprop/loss.png)
