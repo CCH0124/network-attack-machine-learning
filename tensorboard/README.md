@@ -560,3 +560,26 @@ Precision result:  0.94050527
 ![](../figure/20200917-161711-network8-RMSprop/precision.png)
 
 ![](../figure/20200917-161711-network8-RMSprop/loss.png)
+
+
+## Network9
+優化器參數和訓練參數的值
+
+- optimizer
+    - learning_rate=0.01
+    - momentum=0.89
+- train
+    - batch_size=512
+##### 20200918-100919-network9-RMSprop
+- epoch=20
+- predict
+```
+TrueNegatives result:  127296.0
+TruePositives result:  74677.0
+FalseNegatives result:  1301.0
+FalsePositives result:  4537.0
+Recall result:  0.9828766
+Precision result:  0.94272476
+```
+- fig
+    - figure/20200918-100919-network9-RMSprop
