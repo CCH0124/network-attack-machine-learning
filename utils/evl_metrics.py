@@ -20,3 +20,8 @@ def eva_metric(y_label, y_class):
     pre = metrics.Precision() 
     pre.update_state(y_label, y_class) 
     print('Precision result: ', pre.result().numpy())
+
+def getTrainMetricValue(model, evl_result):
+    for name, value in zip(model.metrics_names, evl_result):
+        print(name, ': ', value)
+        print()
