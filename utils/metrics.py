@@ -35,4 +35,3 @@ class ModelMetric():
             return metrics_ + self.multi_category()
         if self.__name == 'binary_crossentropy':
             return metrics_ + self.binary_category()
-
