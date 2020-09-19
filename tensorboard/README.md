@@ -598,3 +598,23 @@ Precision result:  0.9363607
 ```
 - fig
     - figure/20200918-104440-network9-RMSprop
+
+
+##### 20200919-212437-network10-RMSprop
+- learning_rate=0.015
+- momentum=0.9
+- decay= 1e-06
+- epochs=40
+- batch_size=512
+
+- predict
+```
+TrueNegatives result:  127388.0
+TruePositives result:  74996.0
+FalseNegatives result:  818.0
+FalsePositives result:  4609.0
+Recall result:  0.9892104
+Precision result:  0.9421016
+```
+- fig
+    - figure/20200919-212437-network10-RMSprop
