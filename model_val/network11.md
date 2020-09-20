@@ -3,6 +3,7 @@
 ##### 20200920-122742-network11-RMSprop
 - optimizer
     - learning_rate=0.015
+        - step_decay
     - momentum=0.9
     - decay= 1e-06
 - epochs=40
@@ -41,7 +42,7 @@ Precision result:  0.94158024
 
 
 ### SGD
-##### 20200921-002717-network11-SGD
+##### 20200921-012022-network11-SGD
 - optimizer
     - learning_rate=0.015
     - clipnorm=0.9
@@ -76,8 +77,50 @@ Precision result:  0.0
 ```
 
 ##### Fig
-![](../figure/20200921-002717-network11-SGD/loss.png)
-![](../figure/20200921-002717-network11-SGD/recall.png)
-![](../figure/20200921-002717-network11-SGD/precision.png)
-![](../figure/20200921-002717-network11-SGD/cross_entropy_graph_decay.png)
-![](../figure/20200921-002717-network11-SGD/lr_decay.png)
+![](../figure/20200921-012022-network11-SGD/loss.png)
+![](../figure/20200921-012022-network11-SGD/recall.png)
+![](../figure/20200921-012022-network11-SGD/precision.png)
+![](../figure/20200921-012022-network11-SGD/cross_entropy_graph_decay.png)
+![](../figure/20200921-012022-network11-SGD/lr_decay.png)
+
+##### 20200921-012022-network11-SGD
+- optimizer
+    - learning_rate=0.015
+        - exp_decay
+    - clipnorm=0.9
+    - momentum=0.95
+    - nesterov=True
+- epochs=40
+- batch_size=512
+
+##### evaluate
+```
+loss :  0.6586745381355286
+tp :  131974.0
+fp :  75837.0
+tn :  131974.0
+fn :  75837.0
+acc :  0.0
+precision :  0.6350674629211426
+recall :  0.6350674629211426
+auc :  0.6350674629211426
+binary_accuracy :  0.6350674629211426
+binary_crossentropy :  0.6562016010284424
+```
+
+##### predict
+```
+TrueNegatives result:  131974.0
+TruePositives result:  0.0
+FalseNegatives result:  75837.0
+FalsePositives result:  0.0
+Recall result:  0.0
+Precision result:  0.0
+```
+
+##### Fig
+![](../figure/20200921-012022-network11-SGD/loss.png)
+![](../figure/20200921-012022-network11-SGD/recall.png)
+![](../figure/20200921-012022-network11-SGD/precision.png)
+![](../figure/20200921-012022-network11-SGD/cross_entropy_graph_decay.png)
+![](../figure/20200921-012022-network11-SGD/lr_decay.png)
