@@ -10,6 +10,6 @@ def step_decay(epoch):
 
 def exp_decay(epoch, lr):
     initial_lrate = lr
-    k = 0.15
+    k = 0.1
     lrate = initial_lrate * np.exp(-k*epoch)
     return lrate
