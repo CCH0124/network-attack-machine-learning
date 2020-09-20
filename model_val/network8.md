@@ -1,5 +1,4 @@
 ## Network8
-
 ##### 20200917-124949-network8-RMSprop
 - optimizer
     - learning_rate=0.01

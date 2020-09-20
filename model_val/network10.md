@@ -1,12 +1,14 @@
 ## Network10
-有新增一些評估對象
+有新增一些評估對象，從下面來看增加一層神經網路 `recall` 提升至 0.99。`loss` 降的也比之前還低。
 
 ### 20200919-220917-network10-RMSprop
 - optimizer
     - learning_rate=0.015
     - momentum=0.9
     - decay= 1e-06
-##### evl
+- epoch=60
+- batchsize=512
+##### evaluate
 ```
 loss :  0.2224503606557846
 tp :  202174.0
