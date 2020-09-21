@@ -1,6 +1,6 @@
 ## Network11
 
-### 20200921-141604-network11-RMSprop
+### 20200920-122742-network11-RMSprop
 - optimizer
     - learning_rate=0.015
     - momentum=0.9
@@ -34,10 +34,10 @@ Precision result:  0.94158024
 ```
 
 ##### Fig
-![](../figure/20200921-141604-network11-RMSprop/loss.png)
-![](../figure/20200921-141604-network11-RMSprop/recall.png)
-![](../figure/20200921-141604-network11-RMSprop/precision.png)
-![](../figure/20200921-141604-network11-RMSprop/cross_entropy_graph_decay.png)
+![](../figure/20200920-122742-network11-RMSprop/loss.png)
+![](../figure/20200920-122742-network11-RMSprop/recall.png)
+![](../figure/20200920-122742-network11-RMSprop/precision.png)
+![](../figure/20200920-122742-network11-RMSprop/cross_entropy_graph_decay.png)
 
 
 ### 20200921-141604-network11-RMSprop
@@ -49,6 +49,9 @@ Precision result:  0.94158024
 - epochs=40
 - batch_size=512
 
+>以下是 network11 有更改的內容
+>self.drop_one = layers.GaussianDropout(0.5) 
+>dense_three = layers.Dense(8)
 ##### evaluate
 ```
 loss :  0.43092676997184753
@@ -90,6 +93,10 @@ Precision result:  0.9412793
 - epochs=100
 - batch_size=512
 
+>以下是 network11 有更改的內容
+>self.drop_one = layers.GaussianDropout(0.5) 
+>dense_three = layers.Dense(8)
+
 ##### evaluate
 ```
 loss :  0.4223862886428833
@@ -130,6 +137,10 @@ Precision result:  0.9412793
     - decay= 1e-06
 - epochs=40
 - batch_size=512
+
+>以下是 network11 有更改的內容
+>self.drop_one = layers.GaussianDropout(0.5) 
+>dense_three = layers.Dense(8)
 
 ##### evaluate
 ```
