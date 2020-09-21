@@ -10,17 +10,22 @@ class preprocess():
     __LabelDataFrame = None
     __test_size = None
     __depth = None
-    def __init__(self, filePath, labelColumnName='Label', depth=3, test_size=0.3):
+    __feature_selection = None
+    def __init__(self, filePath, feature_selection=None, labelColumnName='Label', depth=3, test_size=0.3):
         super().__init__()
         self.__filePath = filePath
         self.__labelColumnName = labelColumnName
         self.__depth = depth
         self.__test_size = test_size
+        self.__feature_selection = feature_selection
     
     def get_dataFrame(self):
         self.__dataFrame = pd.read_csv(self.__filePath)
         self.column_trim()
-        self.__dataFrame = self.__dataFrame[feature.get_feature()]
+        if self.__feature_selection == None:
+            self.__dataFrame = self.__dataFrame[feature.get_feature()]
+        else:
+            self.__dataFrame = self.__dataFrame[self.__feature_selection]
 
     def column_trim(self):
         self.__dataFrame.columns = self.__dataFrame.columns.str.strip()
