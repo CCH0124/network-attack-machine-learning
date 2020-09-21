@@ -1,9 +1,8 @@
 ## Network11
 
-##### 20200920-122742-network11-RMSprop
+### 20200921-141604-network11-RMSprop
 - optimizer
     - learning_rate=0.015
-        - step_decay
     - momentum=0.9
     - decay= 1e-06
 - epochs=40
@@ -35,16 +34,59 @@ Precision result:  0.94158024
 ```
 
 ##### Fig
-![](../figure/20200920-122742-network11-RMSprop/loss.png)
-![](../figure/20200920-122742-network11-RMSprop/recall.png)
-![](../figure/20200920-122742-network11-RMSprop/precision.png)
-![](../figure/20200920-122742-network11-RMSprop/cross_entropy_graph_decay.png)
+![](../figure/20200921-141604-network11-RMSprop/loss.png)
+![](../figure/20200921-141604-network11-RMSprop/recall.png)
+![](../figure/20200921-141604-network11-RMSprop/precision.png)
+![](../figure/20200921-141604-network11-RMSprop/cross_entropy_graph_decay.png)
 
 
-### SGD
-##### 20200921-012022-network11-SGD
+### 20200921-141604-network11-RMSprop
 - optimizer
     - learning_rate=0.015
+        - step_decay
+    - momentum=0.9
+    - decay= 1e-06
+- epochs=40
+- batch_size=512
+
+##### evaluate
+```
+loss :  0.43092676997184753
+tp :  201869.0
+fp :  5942.0
+tn :  201869.0
+fn :  5942.0
+acc :  0.0
+precision :  0.9714066982269287
+recall :  0.9714066982269287
+auc :  0.9936761260032654
+binary_accuracy :  0.9714066982269287
+binary_crossentropy :  0.28207629919052124
+```
+
+##### predict
+```
+TrueNegatives result:  127571.0
+TruePositives result:  74298.0
+FalseNegatives result:  1307.0
+FalsePositives result:  4635.0
+Recall result:  0.9827128
+Precision result:  0.9412793
+```
+
+##### Fig
+![](../figure/20200921-141604-network11-RMSprop/loss.png)
+![](../figure/20200921-141604-network11-RMSprop/recall.png)
+![](../figure/20200921-141604-network11-RMSprop/precision.png)
+![](../figure/20200921-141604-network11-RMSprop/cross_entropy_graph_decay.png)
+
+
+
+## SGD
+### 20200921-012022-network11-SGD
+- optimizer
+    - learning_rate=0.015
+        - step_decay
     - clipnorm=0.9
     - momentum=0.95
     - nesterov=True
@@ -83,7 +125,7 @@ Precision result:  0.0
 ![](../figure/20200921-012022-network11-SGD/cross_entropy_graph_decay.png)
 ![](../figure/20200921-012022-network11-SGD/lr_decay.png)
 
-##### 20200921-012022-network11-SGD
+### 20200921-012022-network11-SGD
 - optimizer
     - learning_rate=0.015
         - exp_decay
@@ -124,3 +166,5 @@ Precision result:  0.0
 ![](../figure/20200921-012022-network11-SGD/precision.png)
 ![](../figure/20200921-012022-network11-SGD/cross_entropy_graph_decay.png)
 ![](../figure/20200921-012022-network11-SGD/lr_decay.png)
+
+
