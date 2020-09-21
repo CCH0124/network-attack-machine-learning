@@ -121,6 +121,47 @@ Precision result:  0.9412793
 ![](../figure/20200921-145044-network11-RMSprop/precision.png)
 ![](../figure/20200921-145044-network11-RMSprop/cross_entropy_graph_decay.png)
 
+### 20200921-152708-network11-RMSprop
+
+- optimizer
+    - learning_rate=0.015
+        - exp_decay
+    - momentum=0.9
+    - decay= 1e-06
+- epochs=40
+- batch_size=512
+
+##### evaluate
+```
+loss :  0.29141655564308167
+tp :  202194.0
+fp :  5617.0
+tn :  202194.0
+fn :  5617.0
+acc :  0.0
+precision :  0.9729706048965454
+recall :  0.9729706048965454
+auc :  0.9948545098304749
+binary_accuracy :  0.9729706048965454
+binary_crossentropy :  0.17771901190280914
+```
+
+##### predict
+```
+TrueNegatives result:  127516.0
+TruePositives result:  74678.0
+FalseNegatives result:  1156.0
+FalsePositives result:  4461.0
+Recall result:  0.9847562
+Precision result:  0.9436308
+```
+
+##### Fig
+![](../figure/20200921-152708-network11-RMSprop/loss.png)
+![](../figure/20200921-152708-network11-RMSprop/recall.png)
+![](../figure/20200921-152708-network11-RMSprop/precision.png)
+![](../figure/20200921-152708-network11-RMSprop/cross_entropy_graph_decay.png)
+
 
 ## SGD
 ### 20200921-002717-network11-SGD
