@@ -81,9 +81,49 @@ Precision result:  0.9412793
 ![](../figure/20200921-141604-network11-RMSprop/cross_entropy_graph_decay.png)
 
 
+### 20200921-145044-network11-RMSprop
+- optimizer
+    - learning_rate=0.015
+        - step_decay
+    - momentum=0.9
+    - decay= 1e-06
+- epochs=100
+- batch_size=512
+
+##### evaluate
+```
+loss :  0.4223862886428833
+tp :  202018.0
+fp :  5793.0
+tn :  202018.0
+fn :  5793.0
+acc :  0.0
+precision :  0.9721236824989319
+recall :  0.9721236824989319
+auc :  0.9911196827888489
+binary_accuracy :  0.9721236824989319
+binary_crossentropy :  0.2806012034416199
+```
+
+##### predict
+```
+TrueNegatives result:  127571.0
+TruePositives result:  74298.0
+FalseNegatives result:  1307.0
+FalsePositives result:  4635.0
+Recall result:  0.9827128
+Precision result:  0.9412793
+```
+
+##### Fig
+![](../figure/20200921-145044-network11-RMSprop/loss.png)
+![](../figure/20200921-145044-network11-RMSprop/recall.png)
+![](../figure/20200921-145044-network11-RMSprop/precision.png)
+![](../figure/20200921-145044-network11-RMSprop/cross_entropy_graph_decay.png)
+
 
 ## SGD
-### 20200921-012022-network11-SGD
+### 20200921-002717-network11-SGD
 - optimizer
     - learning_rate=0.015
         - step_decay
@@ -119,11 +159,11 @@ Precision result:  0.0
 ```
 
 ##### Fig
-![](../figure/20200921-012022-network11-SGD/loss.png)
-![](../figure/20200921-012022-network11-SGD/recall.png)
-![](../figure/20200921-012022-network11-SGD/precision.png)
-![](../figure/20200921-012022-network11-SGD/cross_entropy_graph_decay.png)
-![](../figure/20200921-012022-network11-SGD/lr_decay.png)
+![](../figure/20200921-002717-network11-SGD/loss.png)
+![](../figure/20200921-002717-network11-SGD/recall.png)
+![](../figure/20200921-002717-network11-SGD/precision.png)
+![](../figure/20200921-002717-network11-SGD/cross_entropy_graph_decay.png)
+![](../figure/20200921-002717-network11-SGD/lr_decay.png)
 
 ### 20200921-012022-network11-SGD
 - optimizer
