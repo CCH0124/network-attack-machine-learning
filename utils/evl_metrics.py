@@ -24,4 +24,3 @@ def eva_metric(y_label, y_class):
 def getTrainMetricValue(model, evl_result):
     for name, value in zip(model.metrics_names, evl_result):
         print(name, ': ', value)
-        print()
