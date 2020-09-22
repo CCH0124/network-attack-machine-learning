@@ -1,4 +1,6 @@
 import numpy as np
+import tensorflow as tf
+
 def step_decay(epoch):
 	initial_lrate = 0.1
 	drop = 0.5

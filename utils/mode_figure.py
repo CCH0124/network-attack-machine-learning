@@ -8,7 +8,7 @@ class ModelFigre():
     __MODEL = None
     def __init__(self, path, filename, model):
         self.__HOME_DIR = path
-        __add_dir(self.__HOME_DIR)
+        self.__add_dir(self.__HOME_DIR)
         self.__NAME = filename
         self.__MODEL = model
 

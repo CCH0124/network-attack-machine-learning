@@ -1,9 +1,7 @@
 from tensorflow.keras import metrics
 class ModelMetric():
-    __name = None
-    def __init__(self, name):
+    def __init__(self):
         super().__init__()
-        self.__name = name
 
     def confusion_matrix_metric(self):
         return [metrics.TruePositives(name='tp'),
@@ -29,11 +27,11 @@ class ModelMetric():
             metrics.BinaryCrossentropy(name='binary_crossentropy', dtype=None, from_logits=False, label_smoothing=0)
         ]
 
-    def metric(self):
+    def metric(self, name):
         metrics_ = self.confusion_matrix_metric() + self.confusion_matrix_other_metric()
-        if self.__name == 'categorical_crossentropy':
+        if name == 'categorical_crossentropy':
             return metrics_ + self.multi_category()
-        if self.__name == 'binary_crossentropy':
+        if name == 'binary_crossentropy':
             return metrics_ + self.binary_category()
     
     def confusion_matrix(self, y_label, y_class):
