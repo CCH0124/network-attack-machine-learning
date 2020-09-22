@@ -1,4 +1,3 @@
-
 import numpy as np
 def step_decay(epoch):
 	initial_lrate = 0.1
