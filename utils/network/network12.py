@@ -17,10 +17,10 @@ class MyLstmModel(tf.keras.Model):
 
         self.flatten_one = layers.Flatten()
 
-        self.dense_three = layers.Dense(16, kernel_regularizer=tf.keras.regularizers.l2(1e-01), activity_regularizer=tf.keras.regularizers.l1(1e-03) ,name='dense_three')
-        self.avtivation_three = layers.Activation(tf.nn.relu6, name='dense_three_activation')
+        # self.dense_three = layers.Dense(16, kernel_regularizer=tf.keras.regularizers.l2(1e-01), activity_regularizer=tf.keras.regularizers.l1(1e-03) ,name='dense_three')
+        # self.avtivation_three = layers.Activation(tf.nn.relu6, name='dense_three_activation')
         
-        self.drop_three = layers.BatchNormalization()
+        # self.drop_three = layers.BatchNormalization()
 
         self.dense_four = layers.Dense(8, kernel_regularizer=tf.keras.regularizers.l2(1e-01), activity_regularizer=tf.keras.regularizers.l1(1e-03) ,name='dense_three')
         self.avtivation_four = layers.Activation(tf.nn.relu6, name='dense_four_activation')
@@ -33,9 +33,9 @@ class MyLstmModel(tf.keras.Model):
         x = self.bi_two(x)
         x = self.drop_two(x)
         x = self.flatten_one(x)
-        x = self.dense_three(x)
-        x = self.avtivation_three(x)
-        x = self.drop_three(x)
+        # x = self.dense_three(x)
+        # x = self.avtivation_three(x)
+        # x = self.drop_three(x)
         x = self.dense_four(x)
         x = self.avtivation_four(x)
         x = self.dense(x)
