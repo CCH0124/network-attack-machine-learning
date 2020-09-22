@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import os
-
+from tensorflow.keras.utils import plot_model
 def add_dir(name): 
     path = "../figure/"+name
     if not os.path.isdir(path):
@@ -54,3 +54,7 @@ def cross_entropy_graph(model_, name):
     plt.legend()
     plt.savefig("../figure/"+name+"/cross_entropy_graph_decay.png")
     plt.show()
+
+def save_model(model_, name):
+    dot_img_file = "../figure/"+name+"/model.png"
+    plot_model(model_, to_file=dot_img_file, rankdir='LR', show_shapes=True)
