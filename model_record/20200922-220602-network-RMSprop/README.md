@@ -60,7 +60,7 @@ Precision result:  0.99833536
 ```
 
 ##### 圖片
-![](../model_record/20200922-220602-network-RMSprop/cross_entropy_graph_decay.png)
-![](../model_record/20200922-220602-network-RMSprop/loss.png)
-![](../model_record/20200922-220602-network-RMSprop/precision.png)
-![](../model_record/20200922-220602-network-RMSprop/recall.png)
+![](cross_entropy_graph_decay.png)
+![](loss.png)
+![](precision.png)
+![](recall.png)
