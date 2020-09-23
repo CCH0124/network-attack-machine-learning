@@ -36,7 +36,7 @@
 
 ### 20200923-193753-network-RMSprop
 
-這次使用基於 `20200923-181126-network-RMSprop` 的架構改進，新增  `self.drop_one = layers.GaussianDropout(0.5)` 這一層
+這次使用基於 `20200923-181126-network-RMSprop` 的架構改進，新增  `self.drop_one = layers.GaussianDropout(0.5)` 這一層，然後調整了 learning rate
 
 - Optimizer
     - learning_rate=0.00125
@@ -48,7 +48,7 @@
 - validation_split=0.3
 
 ##### 評估
-loss 慢慢升高。
+loss 慢慢升高，有可能是 learning rate 影響。
 
 ```
 loss :  0.09270399808883667
