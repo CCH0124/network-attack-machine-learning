@@ -31,7 +31,7 @@
 
 ### 20200923-142954-network-RMSprop
 
-在模型方面嘗試只有第一層 LSTM 增加 kernel_constraint、和 dropout，同樣的有 `GaussianDropout`。
+在模型方面嘗試只有第一層 LSTM 增加 kernel_constraint、和 dropout 將輸入數據進行正規化，同樣的有 `GaussianDropout`。
 
 - Optimizer
     - learning_rate=0.001
