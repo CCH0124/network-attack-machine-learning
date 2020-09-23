@@ -60,6 +60,8 @@ binary_crossentropy :  0.10290833562612534
 ```
 
 ##### 預測
+這地方明顯的有點落差，猜想是 `underfitting` 影響。
+
 ```
 TrueNegatives result:  130815.0
 TruePositives result:  66318.0
