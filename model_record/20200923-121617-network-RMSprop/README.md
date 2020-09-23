@@ -1,10 +1,5 @@
-import tensorflow as tf
-from tensorflow.keras import layers
-# use elastic net
-class MyLstmModel(tf.keras.Model):
-    def __init__(self):
-        super(MyLstmModel, self).__init__()
-
+## Network Arch
+```python
         self.forward_layer_one = layers.LSTM(64, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=3.5) ,dropout=0.5, return_sequences=True) # kernel_regularizer=tf.keras.regularizers.l2(10e-06)
         self.backward_layer_one = layers.LSTM(64, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=3.5) , dropout=0.5, return_sequences=True , go_backwards=True) # kernel_regularizer=tf.keras.regularizers.l2(10e-06)
         self.bi_one = layers.Bidirectional(self.forward_layer_one, backward_layer=self.backward_layer_one, name='bi_one')
@@ -32,18 +27,50 @@ class MyLstmModel(tf.keras.Model):
 
         self.dense = layers.Dense(2, name='classification') # , kernel_regularizer=tf.keras.regularizers.l2(1e-01), activity_regularizer=tf.keras.regularizers.l1(1e-03)
         self.output_res = layers.Activation(tf.nn.softmax, name='classifi')
-    
-    def call(self, inputs, training=None):
-        x = self.bi_one(inputs)
-        # x = self.drop_one(x)
-        x = self.bi_two(x)
-        # x = self.drop_two(x)
-        x = self.bi_three(x)
-        # x = self.drop_three(x)
-        x = self.flatten_one(x)
-        x = self.dense_four(x)
-        x = self.avtivation_four(x)
-        x = self.drop_four(x)
-        x = self.dense(x)
-        x = self.output_res(x)
-        return x
+```
+
+### 20200923-121617-network-RMSprop
+
+在模型方面嘗試將 LSTM 增加 kernel_constraint、和 dropout，並將 `GaussianDropout` 拿掉。
+
+- Optimizer
+    - learning_rate=0.001
+    - momentum=0.9
+    - decay= 1e-06
+    - clipnorm=0.9
+- epochs=40
+- batch_size=512
+- validation_split=0.3
+
+##### 評估
+以評估來看 loss 不錯，但感覺有點 underfitting。
+
+```
+loss :  0.13930687308311462
+tp :  197203.0
+fp :  10608.0
+tn :  197203.0
+fn :  10608.0
+acc :  0.1170029491186142
+precision :  0.9489536285400391
+recall :  0.9489536285400391
+auc :  0.9874338507652283
+binary_accuracy :  0.9489536285400391
+binary_crossentropy :  0.13930687308311462
+```
+
+##### 預測
+```
+TrueNegatives result:  130521.0
+TruePositives result:  66682.0
+FalseNegatives result:  9360.0
+FalsePositives result:  1248.0
+Recall result:  0.87691015
+Precision result:  0.9816281
+```
+
+##### 圖片
+![](../model_record/20200923-121617-network-RMSprop/cross_entropy_graph_decay.png)
+![](../model_record/20200923-121617-network-RMSprop/loss.png)
+![](../model_record/20200923-121617-network-RMSprop/precision.png)
+![](../model_record/20200923-121617-network-RMSprop/recall.png)
