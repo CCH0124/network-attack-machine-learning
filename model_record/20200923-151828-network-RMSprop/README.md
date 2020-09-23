@@ -31,7 +31,7 @@
 
 ### 20200923-151828-network-RMSprop
 
-減少層數。
+減少層數，並拿掉兩個 `GaussianDropout`。
 
 - Optimizer
     - learning_rate=0.001
