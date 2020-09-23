@@ -65,12 +65,6 @@ binary_crossentropy :  0.042246077209711075
 ##### 預測
 還可以在改進模型，Precision 部分有提升，但希望能到接近 0.99。
 ```
-
-y_pred = net.predict(X_test)
-y_class = np.argmax(y_pred, axis=1)
-y_label = np.argmax(y_test, axis=1)
-modelmetric.confusion_matrix(y_label, y_class)
-modelmetric.eva_metric(y_label, y_class)
 TrueNegatives result:  129056.0
 TruePositives result:  75697.0
 FalseNegatives result:  186.0
