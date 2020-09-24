@@ -1,3 +1,18 @@
+## LSTM
+輸入定義為以下
+- Samples
+    - 一個序列就是一個樣本。一個批次包含一個或多個樣品
+- Time Steps
+    - 一個時間步是樣本中的一個觀察點
+- Features
+    - 一個特徵一次觀察一次
+
+- `LSTM` 輸入層必須為 3 維 (Samples, TimeSteps, Feature)
+- 在定義時使用 `Input_shape`，其參數是設置兩個值，它們定義了 `Time Steps` 和 `Feature` 數量
+- `Samples` 設置為 1 個或更多
+
+本實驗是使用 one-to-one，輸入格式是 (ALL_DATA samples, 1 time step, DATA_FEATURE feature)
+
 ## Batch Size
 我們都知道深度學習使用 `gradient descent` 來訓練神經網路，其中基於訓練數據集的子集合計算用於更新權重的誤差估計。而梯度的評估使用訓練數據集中的小樣本，可稱為`batch size`，它會影響超參數(hyperparameter)像是 `learning rate`等。方式有以下
 
