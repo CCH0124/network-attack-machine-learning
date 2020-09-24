@@ -1,12 +1,5 @@
-import tensorflow as tf
-from tensorflow.keras import layers
-# use elastic net
-
-
-class MyLstmModel(tf.keras.Model):
-    def __init__(self):
-        super(MyLstmModel, self).__init__()
-
+## Network Arch
+```python
         self.forward_layer_one = layers.LSTM(64, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=4), recurrent_constraint=tf.keras.constraints.MaxNorm(
             max_value=4), bias_regularizer=tf.keras.regularizers.l2(10e-06) ,return_sequences=True)
         self.backward_layer_one = layers.LSTM(64, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=4), recurrent_constraint=tf.keras.constraints.MaxNorm(
@@ -46,19 +39,50 @@ class MyLstmModel(tf.keras.Model):
         self.dense = layers.Dense(2, name='classification')
         self.output_res = layers.Activation(tf.nn.softmax, name='classifi')
 
-    def call(self, inputs, training=None):
-        x = self.bi_one(inputs)
-        x = self.noise_one(x)
-        x = self.bn_one(x)
-        x = self.bi_two(x)
-        x = self.bn_two(x)
-        x = self.bi_three(x)
-        x = self.bn_three(x)
-        x = self.flatten_one(x)
-        x = self.dense_four(x)
-        x = self.noise_two(x)
-        x = self.avtivation_four(x)
-        x = self.bn_four(x)
-        x = self.dense(x)
-        x = self.output_res(x)
-        return x
+```
+
+### 20200924-140551-network-RMSprop
+
+這次使用基於 `20200923-181126-network-RMSprop` 的架構，新增 `bias_regularizer` 約束
+- Optimizer
+    - learning_rate=0.001
+    - momentum=0.95
+    - decay= 1e-06
+    - clipnorm=0.9
+- epochs=40
+- batch_size=512
+- validation_split=0.3
+
+##### 評估
+loss 慢慢升高，有可能是新增的 `bias_regularizer` 有所影響。
+
+```
+loss :  0.0720677301287651
+tp :  202197.0
+fp :  5614.0
+tn :  202197.0
+fn :  5614.0
+acc :  0.0
+precision :  0.9729850888252258
+recall :  0.9729850888252258
+auc :  0.9961875081062317
+binary_accuracy :  0.9729850888252258
+binary_crossentropy :  0.07194998115301132
+```
+
+##### 預測
+
+```
+TrueNegatives result:  127734.0
+TruePositives result:  74463.0
+FalseNegatives result:  1135.0
+FalsePositives result:  4479.0
+Recall result:  0.98498636
+Precision result:  0.94326216
+```
+
+##### 圖片
+![](cross_entropy_graph_decay.png)
+![](loss.png)
+![](precision.png)
+![](recall.png)
