@@ -17,19 +17,19 @@ def get_feature():
 def feature_selection():
     return [
 
-        'Bwd Packet Length Mean'
-        'Idle Mean'
-        'Bwd Packet Length Std'
-        'Max Packet Length'
-        'Bwd Packet Length Max'
-        'Average Packet Size'
-        'Fwd IAT Total'
-        'Bwd Packets/s'
-        'Active Max'
-        'Fwd IAT Mean'
-        'Flow IAT Mean'
-        'Idle Std'
-        'Packet Length Mean'
-        'Min Packet Length'
+        'Bwd Packet Length Mean',
+        'Idle Mean',
+        'Bwd Packet Length Std',
+        'Max Packet Length',
+        'Bwd Packet Length Max',
+        'Average Packet Size',
+        'Fwd IAT Total',
+        'Bwd Packets/s',
+        'Active Max',
+        'Fwd IAT Mean',
+        'Flow IAT Mean',
+        'Idle Std',
+        'Packet Length Mean',
+        'Min Packet Length',
         'ECE Flag Count'
     ]
