@@ -31,5 +31,6 @@ def feature_selection():
         'Idle Std',
         'Packet Length Mean',
         'Min Packet Length',
-        'ECE Flag Count'
+        'ECE Flag Count',
+        'Label'
     ]
