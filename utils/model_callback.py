@@ -17,6 +17,6 @@ def exp_decay(epoch, lr):
 
 class MyStopTrainCallBack(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
-        if(logs.get('loss') < 0.4):
+        if(logs.get('loss') < 0.04):
             print("\nLoss is low so cancelling training!!")
             self.model.stop_training = True

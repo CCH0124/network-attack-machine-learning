@@ -8,7 +8,7 @@ class MyLstmModel(tf.keras.Model):
         super(MyLstmModel, self).__init__()
 
         self.forward_layer_one = layers.LSTM(64, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=4), recurrent_constraint=tf.keras.constraints.MaxNorm(
-            max_value=4), bias_regularizer=tf.keras.regularizers.l2(10e-06) ,return_sequences=True)
+            max_value=4) ,return_sequences=True)
         self.backward_layer_one = layers.LSTM(64, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=4), recurrent_constraint=tf.keras.constraints.MaxNorm(
             max_value=4), return_sequences=True, go_backwards=True)
         self.bi_one = layers.Bidirectional(
@@ -36,7 +36,7 @@ class MyLstmModel(tf.keras.Model):
         self.flatten_one = layers.Flatten()
 
         self.dense_four = layers.Dense(
-            16, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=4), bias_regularizer=tf.keras.regularizers.l2(1e-02), name='dense_three')
+            16, kernel_constraint=tf.keras.constraints.MaxNorm(max_value=4), name='dense_three')
         self.noise_two = layers.GaussianNoise(0.5)
         self.avtivation_four = layers.Activation(
             tf.nn.relu6, name='dense_four_activation')

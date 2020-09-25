@@ -1,2 +1,1 @@
-feature1,feature2,feature3,feature4,feature5,feature6,feature7,feature8,feature9,feature10
 Flow Duration,Flow Bytes/s,Flow Packets/s,Flow IAT Mean,Flow IAT Max,Fwd IAT Total,Bwd IAT Std,Fwd Packets/s,Packet Length Variance,Idle Max
