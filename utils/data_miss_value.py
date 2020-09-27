@@ -28,7 +28,7 @@ def nan_insert_method(dataframe, method='ffill'):
 
 def inf_and_na_drop(dataframe):
     dataframe = dataframe.replace(['Infinity', np.inf, -np.inf], np.nan)
-    return dataframe.dropna(axis=1)
+    return dataframe.dropna(axis=0)
     
 
 def inf_drop_insert_nan(dataframe, method='ffill'):
