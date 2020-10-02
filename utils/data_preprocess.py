@@ -24,7 +24,7 @@ class preprocess():
     
     def get_dataFrame(self):
         self.__dataFrame = pd.read_csv(self.__filePath)
-        ndp.column_trim(self.__dataFrame)
+        self.__dataFrame.columns = ndp.column_trim(self.__dataFrame)
         if self.__feature_selection == None:
             self.__dataFrame = self.__dataFrame[feature.get_feature()]
         else:
