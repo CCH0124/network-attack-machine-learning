@@ -13,7 +13,6 @@ def get_feature():
             'min_seg_size_forward', 'Active Mean', 'Active Std', 'Active Max', 'Active Min', 'Idle Mean', 'Idle Std', 'Idle Max', 'Idle Min',
             'Label']
 
-
 def feature_selection():
     return [
 
