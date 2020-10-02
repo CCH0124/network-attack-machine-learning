@@ -44,7 +44,9 @@ def column_trim(dataframe):
 
 def column_del_one_value(dataframe):
     counts = dataframe.nunique()
+    counts = counts.to_dict()
     # record columns to delete
-    to_del = [i for i,v in enumerate(counts) if v == 1]
+    to_del = [k for k in counts if counts[k] == 1]
     # drop useless columns
-    dataframe.drop(to_del, axis=1,inplace=True)
+    # dataframe.drop(to_del, axis=1, inplace=True)
+    return to_del
