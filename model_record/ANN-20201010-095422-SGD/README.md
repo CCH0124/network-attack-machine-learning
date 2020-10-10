@@ -59,6 +59,7 @@ Precision result:  0.9661344
 
 ## fig
 
+![](cross_entropy_graph_decay.png)
 ![](loss.png)
 ![](precision.png)
 ![](recall.png)
