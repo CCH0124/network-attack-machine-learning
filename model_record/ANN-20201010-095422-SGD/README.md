@@ -30,6 +30,8 @@ algorithm = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.99, clipvalue
 model.compile(optimizer=algorithm, loss='binary_crossentropy', metrics=modelmetric.metric('binary_crossentropy')) # categorical_crossentropycategorical_crossentropy
 ```
 
+- epoch=40
+- batchsize=512
 
 ## evaluate
 loss :  0.03813507407903671
