@@ -1,3 +1,4 @@
+特徵部份把欄位只有一個值得欄位刪除。實作在 `data_value` 的 `column_del_one_value` 方法中。
 ```python
 from tensorflow.keras import layers, Input
 from tensorflow.keras import Model
