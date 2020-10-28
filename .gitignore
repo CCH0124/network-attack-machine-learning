@@ -1,6 +1,7 @@
 # dir
 !tensorboard/README.md
 tensorboard/**
+dataset/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
