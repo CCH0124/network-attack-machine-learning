@@ -13,6 +13,25 @@
 
 本實驗是使用 one-to-one，輸入格式是 (ALL_DATA samples, 1 time step, DATA_FEATURE feature)
 
+
+單純如下宣告
+```python
+LSTM(x) # 只會輸出最後一個
+```
+
+定義以下參數
+```python
+return_sequences=True # 表示將每一個 LSTM 輸出給紀錄，下圖一來看是 h_{t-1}、h_{t}、h_{t+1}
+return_state=True # 表示 LSTM 傳遞到下一層狀態紀錄，下圖二來看是 c^t 和 h^t
+```
+![](https://miro.medium.com/max/2752/1*0R9LrwwY4zd585qEAgws6w.png)
+圖一
+![](https://pic1.zhimg.com/v2-556c74f0e025a47fea05dc0f76ea775d_1440w.jpg?source=172ae18b)
+圖二
+
+
+雙向 LSTM 其隱藏狀態會是 LSTM 的兩倍因為前向和後向傳遞
+
 ## Batch Size
 我們都知道深度學習使用 `gradient descent` 來訓練神經網路，其中基於訓練數據集的子集合計算用於更新權重的誤差估計。而梯度的評估使用訓練數據集中的小樣本，可稱為`batch size`，它會影響超參數(hyperparameter)像是 `learning rate`等。方式有以下
 
